@@ -1,16 +1,18 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
+
 <template>
   <section>
     <header>
       <h2>Dave Ndwiga</h2>
 
       <nav>
-        <ul>
-          <li>Home</li>
-          <li>Services</li>
-          <li>Education</li>
-          <li>Projects</li>
-          <li>Contact</li>
-        </ul>
+        <RouterLink to="/" class="link">Home</RouterLink>
+        <RouterLink to="/services" class="link">Services</RouterLink>
+        <RouterLink to="/education" class="link">Education</RouterLink>
+        <RouterLink to="/projects" class="link">Projects</RouterLink>
+        <RouterLink to="/contact" class="link">Contact</RouterLink>
       </nav>
     </header>
   </section>
@@ -35,19 +37,17 @@ header {
   }
 
   nav {
-    ul {
-      display: flex;
-      gap: 2rem;
+    display: flex;
+    gap: 2rem;
 
-      li {
-        list-style-type: none;
-        font-weight: 400;
-        cursor: pointer;
-        color: $color;
+    .link {
+      text-decoration: none;
+      font-weight: 400;
+      color: $color;
+      cursor: pointer;
 
-        &:hover {
-          color: #0e70ed;
-        }
+      &:hover {
+        color: #0e70ed;
       }
     }
   }
