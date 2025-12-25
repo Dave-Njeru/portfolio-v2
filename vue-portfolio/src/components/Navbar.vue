@@ -40,8 +40,7 @@ const toggleMenu = () => {
 </template>
 
 <style scoped lang="scss">
-$color: #212529;
-
+@use "@/assets/styles/variables.scss";
 header {
   display: flex;
   justify-content: space-between;
@@ -54,7 +53,7 @@ header {
       size: 1.5rem;
     }
 
-    color: $color;
+    color: variables.$color;
   }
 
   nav {
@@ -67,7 +66,7 @@ header {
         weight: 400;
         size: 1rem;
       }
-      color: $color;
+      color: variables.$color;
       cursor: pointer;
 
       &:hover {
@@ -91,7 +90,7 @@ header {
       display: block;
       height: 4px;
       width: 100%;
-      background: $color;
+      background: variables.$color;
       border-radius: 2px;
       transition: 0.3s;
     }
