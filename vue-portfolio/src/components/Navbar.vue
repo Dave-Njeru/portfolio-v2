@@ -11,7 +11,9 @@ const toggleMenu = () => {
 <template>
   <section>
     <header>
-      <h2>Dave Ndwiga</h2>
+      <div>
+        <span>DN</span>
+      </div>
 
       <nav :class="{ open: menuOpen }">
         <RouterLink to="/" class="link" @click="menuOpen = false"
@@ -47,14 +49,24 @@ header {
   align-items: center;
   padding: 1rem 0;
 
-  h2 {
-    font: {
-      weight: 600;
-      size: 1.5rem;
-    }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: white;
+    background-color: oklch(55.8% 0.288 302.321); // bg-purple-600
 
-    color: variables.$color;
+    span {
+      font: {
+        weight: 700;
+        size: 1.25rem;
+      }
+    }
   }
+  
 
   nav {
     display: flex;
