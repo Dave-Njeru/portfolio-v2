@@ -34,25 +34,31 @@ main {
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
+    gap: 1.5rem;
 
     h1 {
       font: {
         weight: 900;
         size: 3.75rem;
       }
-      //   letter-spacing: -0.05rem;
-      //   line-height: 1.25rem;
+      letter-spacing: -0.05rem;
+      line-height: 1.25;
       color: variables.$color;
     }
 
     h2 {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      // line-height: 1.5;
+      font: {
+        weight: 400;
+        size: 1.25rem;
+      }
+      line-height: 1.5;
+      color: #4b5563;  
     }
 
     div {
       display: flex;
+      justify-content: flex-start;
+      align-items: center;
       gap: 1rem;
 
       button {
@@ -93,7 +99,7 @@ main {
 
     div#description {
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
       }
 
       h2 {
