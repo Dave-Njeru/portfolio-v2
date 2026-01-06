@@ -25,6 +25,7 @@
 
 <style scoped lang="scss">
 @use "@/assets/styles/variables.scss";
+
 main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -41,6 +42,7 @@ main {
         weight: 900;
         size: 3.75rem;
       }
+
       letter-spacing: -0.05rem;
       line-height: 1.25;
       color: variables.$color;
@@ -51,8 +53,9 @@ main {
         weight: 400;
         size: 1.25rem;
       }
+
       line-height: 1.5;
-      color: #4b5563;  
+      color: #4b5563;
     }
 
     div {

@@ -16,21 +16,11 @@ const toggleMenu = () => {
       </div>
 
       <nav :class="{ open: menuOpen }">
-        <RouterLink to="/" class="link" @click="menuOpen = false"
-          >Home</RouterLink
-        >
-        <RouterLink to="/services" class="link" @click="menuOpen = false"
-          >Services</RouterLink
-        >
-        <RouterLink to="/education" class="link" @click="menuOpen = false"
-          >Education</RouterLink
-        >
-        <RouterLink to="/projects" class="link" @click="menuOpen = false"
-          >Projects</RouterLink
-        >
-        <RouterLink to="/contact" class="link" @click="menuOpen = false"
-          >Contact</RouterLink
-        >
+        <RouterLink to="/" class="link" @click="menuOpen = false">Home</RouterLink>
+        <RouterLink to="/services" class="link" @click="menuOpen = false">Services</RouterLink>
+        <RouterLink to="/education" class="link" @click="menuOpen = false">Education</RouterLink>
+        <RouterLink to="/projects" class="link" @click="menuOpen = false">Projects</RouterLink>
+        <RouterLink to="/contact" class="link" @click="menuOpen = false">Contact</RouterLink>
       </nav>
       <button class="hamburger" @click="toggleMenu">
         <span></span>
@@ -43,6 +33,7 @@ const toggleMenu = () => {
 
 <style scoped lang="scss">
 @use "@/assets/styles/variables.scss";
+
 header {
   display: flex;
   justify-content: space-between;
@@ -66,7 +57,7 @@ header {
       }
     }
   }
-  
+
 
   nav {
     display: flex;
@@ -74,10 +65,12 @@ header {
 
     .link {
       text-decoration: none;
+
       font: {
         weight: 400;
         size: 1rem;
       }
+
       color: variables.$color;
       cursor: pointer;
 
@@ -138,9 +131,11 @@ header {
         }
       }
     }
+
     nav.open {
       display: flex;
     }
+
     .hamburger {
       display: flex;
     }
