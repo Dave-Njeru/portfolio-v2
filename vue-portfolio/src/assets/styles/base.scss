@@ -1,0 +1,9 @@
+// Mixin: content-flow
+// Purpose: Creates a full-height flexbox container with vertical content flow
+// Usage: Apply to wrapper elements (e.g., main layout containers) to ensure
+//        content stretches to fill the viewport height with proper flex column layout
+@mixin container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

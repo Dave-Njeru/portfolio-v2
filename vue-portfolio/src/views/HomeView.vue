@@ -13,9 +13,9 @@ import Footer from "@/components/shared/Footer.vue";
 </template>
 
 <style scoped lang="scss">
+@use "../assets/styles/base.scss";
+
 div {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  @include base.container;
 }
 </style>
