@@ -32,7 +32,6 @@
                     <span>Django</span>
                     <span>SQL</span>
                 </div>
-
             </div>
             <!-- Service Card 2: IT Support-->
             <div class="service-card">
@@ -69,8 +68,10 @@
             </div>
         </div>
         <!-- CTA Button -->
-        <div>
-            <button>Let's Work Together</button>
+        <div class="cta-container">
+            <button>
+                <span>Let's Work Together</span>
+            </button>
         </div>
     </main>
 </template>
@@ -177,13 +178,52 @@ main {
     span {
         background-color: rgb(239, 246, 255);
         color: rgb(37, 99, 235);
+
         font: {
             size: 0.875rem;
             weight: 500;
         }
+
         padding: 0.25rem 0.75rem;
         border-radius: 0.375rem;
         line-height: 1;
+    }
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+
+    button {
+        display: flex;
+        align-items: center; // Centers the span text vertically
+        justify-content: center; // Centers the span text horizontally
+        min-width: 5.25rem;
+        max-width: 30rem;
+        background-color: rgb(59, 130, 246);
+        color: rgb(255, 255, 255);
+
+        font: {
+            size: 1rem;
+            weight: 600;
+        }
+
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 300ms ease-in-out;
+
+        &:hover {
+            background-color: rgb(37, 99, 235);
+        }
+
+        span {
+            overflow: hidden; // Hides overflowed text
+            text-overflow: ellipsis; // Adds ellipsis for overflowed text ("...")
+            white-space: nowrap; // Prevents text from wrapping to the next line
+        }
     }
 }
 </style>
