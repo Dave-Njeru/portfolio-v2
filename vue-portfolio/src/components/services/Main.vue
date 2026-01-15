@@ -1,8 +1,8 @@
 <template>
     <main>
         <!-- Heading Section -->
-        <div>
-            <h1 class="page-title">My Skills &amp; Services</h1>
+        <div class="page-title">
+            <h1>My Skills &amp; Services</h1>
         </div>
         <!-- Summary Section -->
         <div>
@@ -85,14 +85,22 @@ main {
 }
 
 .page-title {
-    font: {
-        size: 2.5rem;
-        weight: 900;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1rem;
 
-    letter-spacing: -0.033rem;
-    line-height: 1.25;
-    color: rgb(15, 23, 42);
+    h1 {
+        font: {
+            size: 2.5rem;
+            weight: 900;
+        }
+
+        letter-spacing: -0.033rem;
+        line-height: 1.25;
+        color: rgb(15, 23, 42);
+    }
 }
 
 .page-summary {
