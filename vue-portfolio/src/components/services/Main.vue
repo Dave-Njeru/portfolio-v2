@@ -93,12 +93,12 @@ main {
 
     h1 {
         font: {
-            size: 2.5rem;
+            size: 2.25rem;
             weight: 900;
         }
 
-        letter-spacing: -0.033rem;
-        line-height: 1.25;
+        letter-spacing: -0.033em;
+        line-height: 2.5rem;
         color: rgb(15, 23, 42);
     }
 }
