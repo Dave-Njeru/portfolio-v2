@@ -18,8 +18,8 @@
         </div>
         <!-- CTA Buttons -->
         <div class="button-group">
-          <button><a href="#">Explore My Projects</a></button>
-          <button><a href="#">Download Resume</a></button>
+          <button><span>Explore My Projects</span></button>
+          <button><span>Download Resume</span></button>
         </div>
       </div>
       <!-- Hero Image -->
@@ -84,7 +84,7 @@ main {
 
     @media (min-width: 1024px) {
       font-size: 3.75rem;
-    } 
+    }
   }
 
   h2 {
@@ -96,6 +96,62 @@ main {
     @media (min-width: 640px) {
       font-size: 1.25rem;
       line-height: 1.75;
+    }
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 5.25rem;
+    max-width: 30rem;
+    overflow: hidden;
+    border: none;
+    border-radius: 0.5rem;
+    height: 3rem;
+    padding: 0 1.5rem;
+
+    font: {
+      size: 1rem;
+      weight: 700;
+    }
+
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+    background-color: rgb(37, 99, 235);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    @media (min-width: 640px) {
+      width: auto;
     }
   }
 }
