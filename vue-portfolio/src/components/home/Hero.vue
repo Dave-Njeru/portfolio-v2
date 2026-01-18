@@ -22,9 +22,9 @@
           <button><span>Download Resume</span></button>
         </div>
       </div>
-      <!-- Hero Image -->
-      <div>
-        <img src="@/assets/images/profile.jpg" alt="Hero Image" />
+      <!-- Profile Image -->
+      <div class="profile-image">
+        <img src="@/assets/images/profile.jpg" alt="professional headshot of Dave Ndwiga" />
       </div>
     </div>
   </main>
@@ -152,6 +152,23 @@ main {
 
     @media (min-width: 640px) {
       width: auto;
+    }
+  }
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (min-width: 640px) {
+      width: 24rem;
+      height: 24rem;
     }
   }
 }
