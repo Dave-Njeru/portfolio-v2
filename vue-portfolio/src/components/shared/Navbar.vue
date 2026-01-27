@@ -53,7 +53,7 @@ onUnmounted(() => {
       <nav :class="{ open: menuOpen }" class="navigation">
         <RouterLink to="/" class="link" @click="menuOpen = false">Home</RouterLink>
         <RouterLink to="/services" class="link" @click="menuOpen = false">Services</RouterLink>
-        <RouterLink to="/education" class="link" @click="menuOpen = false">Education</RouterLink>
+        <RouterLink to="/resume" class="link" @click="menuOpen = false">Resume</RouterLink>
         <RouterLink to="/projects" class="link" @click="menuOpen = false">Projects</RouterLink>
         <RouterLink to="/contact" class="link" @click="menuOpen = false">Contact</RouterLink>
       </nav>
