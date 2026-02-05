@@ -3,9 +3,29 @@
 // Usage: Apply to wrapper elements (e.g., main layout containers) to ensure
 //        content stretches to fill the viewport height with proper flex column layout
 @mixin container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    position: relative; // Establishes a new positioning context
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  position: relative; // Establishes a new positioning context
+}
+
+// Mixin: section-headings
+// Purpose: Styles section headings with consistent typography, spacing, and visual hierarchy
+// Usage: Apply to section heading elements (h2, h3) to create a unified, branded appearance
+@mixin section-heading {
+  font: {
+    size: 1.25rem;
+    weight: 700;
+  }
+
+  line-height: 1.75rem;
+  color: rgb(33, 33, 33);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-color: rgb(19, 91, 236);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
