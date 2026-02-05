@@ -10,3 +10,23 @@
         </p>
     </section>
 </template>
+
+<style scoped lang="scss">
+@use "../../assets/styles/base.scss";
+
+section {
+    h2 {
+        @include base.section-heading;
+    }
+
+    p {
+        font: {
+            size: 1rem;
+            weight: 400;
+        }
+
+        line-height: 1.625;
+        color: rgb(75, 85, 99);
+    }
+}
+</style>
