@@ -5,11 +5,11 @@
         <div class="contact-info">
             <div>
                 <span class="material-symbols-outlined">mail</span>
-                <a href="mailto:davenjeru9.com">davenjeru9@gmail.com</a>
+                <a href="mailto:davenjeru9@gmail.com">davenjeru9@gmail.com</a>
             </div>
             <div>
                 <span class="material-symbols-outlined">phone</span>
-                <a href="tel:+15551234567">+254 111376951</a>
+                <a href="tel:+254111376951">+254 111376951</a>
             </div>
             <div>
                 <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
