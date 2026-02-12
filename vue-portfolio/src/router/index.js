@@ -18,7 +18,12 @@ const router = createRouter({
       name: 'resume',
       component: () => import('../views/ResumeView.vue')
     },
-  ],
+    {
+      path: '/projects',
+      name: 'projects',
+      component: () => import('../views/ProjectsView.vue')
+    }
+  ]
 })
 
 export default router
