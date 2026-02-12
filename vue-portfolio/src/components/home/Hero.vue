@@ -24,7 +24,7 @@
       </div>
       <!-- Profile Image -->
       <div class="profile-image">
-        <img src="@/assets/images/profile.jpg" alt="professional headshot of Dave Ndwiga" />
+        <img src="@/assets/images/profile.jpg" alt="profile image" />
       </div>
     </div>
   </main>
