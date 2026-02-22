@@ -1,3 +1,11 @@
+<script setup>
+import healthMgtSystem from "@/assets/images/health-mgt-system.png";
+import wasteMgtSystem from "@/assets/images/waste-mgt-system.jpg";
+import zeeliu from "@/assets/images/zeeliu.png";
+import webScraping from "@/assets/images/web-scraping.jpg";
+import dataWrangling from "@/assets/images/data-wrangling.jpg";
+</script>
+
 <template>
     <main>
         <!-- PageHeading -->
@@ -19,7 +27,7 @@
             <div class="project-item">
                 <div>
                     <div data-alt="Screenshot of the Health Management System"
-                        style="background-image: url('/src/assets/images/health-mgt-system.png');">
+                        :style="{ backgroundImage: `url(${healthMgtSystem})` }">
                     </div>
                 </div>
                 <div>
@@ -35,7 +43,7 @@
             <div class="project-item">
                 <div>
                     <div data-alt="Image mimics a Waste Management System"
-                        style="background-image: url('/src/assets/images/waste-mgt-system.jpg');">
+                        :style="{ backgroundImage: `url(${wasteMgtSystem})` }">
                     </div>
                 </div>
                 <div>
@@ -51,8 +59,7 @@
             <!-- Project Item 3 -->
             <div class="project-item">
                 <div>
-                    <div data-alt="Homepage of the Zeeliu website"
-                        style="background-image: url('/src/assets/images/zeeliu.png');">
+                    <div data-alt="Homepage of the Zeeliu website" :style="{ backgroundImage: `url(${zeeliu})` }">
                     </div>
                 </div>
                 <div>
@@ -67,7 +74,7 @@
             <!-- Project Item 4 -->
             <div class="project-item">
                 <div>
-                    <div style="background-image: url('/src/assets/images/web-scraping.jpg');"></div>
+                    <div :style="{ backgroundImage: `url(${webScraping})` }"></div>
                 </div>
                 <div>
                     <p>Web Scraping using Python</p>
@@ -79,7 +86,7 @@
             <!-- Project Item 5 -->
             <div class="project-item">
                 <div>
-                    <div style="background-image: url('/src/assets/images/data-wrangling.jpg');"></div>
+                    <div :style="{ backgroundImage: `url(${dataWrangling})` }"></div>
                 </div>
                 <div>
                     <p>Netflix Data Wrangling</p>
