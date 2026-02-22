@@ -5,16 +5,15 @@
             <!-- Experience Item 1-->
             <div>
                 <div class="experience-header">
-                    <h3>Data Management Specialist</h3>
+                    <h3>Data Specialist</h3>
                     <p>Dec 2021 - Present</p>
                 </div>
-                <p class="company">CloudFactory | Remote</p>
+                <p class="company">CloudFactory | Hybrid</p>
                 <ul class="job-duties">
-                    <li>Processed and annotated datasets with 95% accuracy to support ML projects.
-                    </li>
-                    <li>Collaborated with cross-functional teams to ensure data quality and consistency.</li>
-                    <li>Conducted data research and entry activities with 98% accuracy.</li>
-                    <li>Utilized data management tools to streamline workflows and improve efficiency.</li>
+                    <li>Process and annotate datasets with 95% accuracy to support ML projects.</li>
+                    <li>Collaborate with cross-functional teams to ensure data quality and consistency.</li>
+                    <li>Conduct data research and entry activities with 98% accuracy.</li>
+                    <li>Utilize data management tools to streamline workflows and improve efficiency.</li>
                 </ul>
             </div>
             <!-- Experience Item 2-->
@@ -91,7 +90,7 @@ section {
     }
 }
 
-.company{
+.company {
     font: {
         size: 1rem;
         weight: 500;
