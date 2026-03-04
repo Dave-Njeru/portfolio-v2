@@ -1,9 +1,69 @@
 <script setup>
+import { ref, computed } from "vue";
 import healthMgtSystem from "@/assets/images/health-mgt-system.png";
 import wasteMgtSystem from "@/assets/images/waste-mgt-system.jpg";
 import zeeliu from "@/assets/images/zeeliu.png";
 import webScraping from "@/assets/images/web-scraping.jpg";
 import dataWrangling from "@/assets/images/data-wrangling.jpg";
+
+const selectedCategory = ref("All");
+
+const projects = ref([
+  {
+    id: 1,
+    title: "Health Management System",
+    description:
+      "This project demonstrates how AI can be integrated into modern web applications through an automated appointment booking system with SMS notifications. It incorporates key features such as AWS cloud storage for scalable data management and two-factor authentication to enhance security. This system was developed as my final year project at MKU University.",
+    technologies: "JavaScript, PHP, MariaDB, AWS, OpenAI",
+    image: healthMgtSystem,
+    category: "Web Development",
+  },
+  {
+    id: 2,
+    title: "Waste Management System",
+    description:
+      "In this project, I served as the backend developer, implementing key admin features, authentication mechanisms, and database architecture and modeling. While the frontend was handled by another developer, I also contributed as a consultant to ensure seamless integration. This role highlighted my expertise in building secure, scalable backend systems for collaborative development environments.",
+    technologies: "JavaScript, PHP, MariaDB",
+    image: wasteMgtSystem,
+    category: "Web Development",
+  },
+  {
+    id: 3,
+    title: "Zeeliu Designs",
+    description:
+      "This project involved developing a website based on a provided design specification. I was responsible for building the site and ensuring that the content and layout were properly aligned and visually consistent. The website was optimized to function seamlessly across both desktop and mobile views.",
+    technologies: "HTML, CSS, BootStrap, JavaScript",
+    image: zeeliu,
+    category: "Web Development",
+  },
+  {
+    id: 4,
+    title: "Web Scraping using Python",
+    description:
+      "Developed a web scraping solution to automatically extract, clean, and organize data from targeted websites for efficient analysis and reporting.",
+    technologies: "Python, Google Colab",
+    image: webScraping,
+    category: "Data Analysis",
+  },
+  {
+    id: 5,
+    title: "Netflix Data Wrangling",
+    description:
+      "Performed data wrangling on a Netflix dataset to clean, transform, and prepare the data for exploratory analysis and insights generation.",
+    technologies: "Python, Kaggle",
+    image: dataWrangling,
+    category: "Data Analysis",
+  },
+]);
+
+const filteredProjects = computed(() => {
+  if (selectedCategory.value === "All") {
+    return projects.value;
+  }
+  return projects.value.filter(
+    (project) => project.category === selectedCategory.value
+  );
+});
 </script>
 
 <template>
@@ -17,82 +77,33 @@ import dataWrangling from "@/assets/images/data-wrangling.jpg";
         </div>
         <!-- Chips -->
         <div class="button-group">
-            <button><span>All</span></button>
-            <button><span>Web Development</span></button>
-            <button><span>Data Analysis</span></button>
+            <button 
+                @click="selectedCategory = 'All'"
+                :class="{ active: selectedCategory === 'All' }">
+                <span>All</span>
+            </button>
+            <button 
+                @click="selectedCategory = 'Web Development'"
+                :class="{ active: selectedCategory === 'Web Development' }">
+                <span>Web Development</span>
+            </button>
+            <button 
+                @click="selectedCategory = 'Data Analysis'"
+                :class="{ active: selectedCategory === 'Data Analysis' }">
+                <span>Data Analysis</span>
+            </button>
         </div>
         <!-- ImageGrid -->
         <div class="image-grid">
-            <!-- Project Item 1 -->
-            <div class="project-item">
+            <!-- Project Item -->
+            <div class="project-item" v-for="project in filteredProjects" :key="project.id">
                 <div>
-                    <div data-alt="Screenshot of the Health Management System"
-                        :style="{ backgroundImage: `url(${healthMgtSystem})` }">
-                    </div>
+                    <div :style="{ backgroundImage: `url(${project.image})` }"></div>
                 </div>
                 <div>
-                    <p>Health Management System</p>
-                    <p>This project demonstrates how AI can be integrated into modern web applications through an
-                        automated appointment booking system with SMS notifications. It incorporates key features such
-                        as AWS cloud storage for scalable data management and two-factor authentication to enhance
-                        security. This system was developed as my final year project at MKU University.</p>
-                    <p>JavaScript, PHP, MariaDB, AWS, OpenAI</p>
-                </div>
-            </div>
-            <!-- Project Item 2 -->
-            <div class="project-item">
-                <div>
-                    <div data-alt="Image mimics a Waste Management System"
-                        :style="{ backgroundImage: `url(${wasteMgtSystem})` }">
-                    </div>
-                </div>
-                <div>
-                    <p>Waste Management System</p>
-                    <p>In this project, I served as the backend developer, implementing key admin features,
-                        authentication mechanisms, and database architecture and modeling. While the frontend was
-                        handled by another developer, I also contributed as a consultant to ensure seamless integration.
-                        This role highlighted my expertise in building secure, scalable backend systems for
-                        collaborative development environments.</p>
-                    <p>JavaScript, PHP, MariaDB</p>
-                </div>
-            </div>
-            <!-- Project Item 3 -->
-            <div class="project-item">
-                <div>
-                    <div data-alt="Homepage of the Zeeliu website" :style="{ backgroundImage: `url(${zeeliu})` }">
-                    </div>
-                </div>
-                <div>
-                    <p>Zeeliu Designs</p>
-                    <p>This project involved developing a website based on a provided design specification. I was
-                        responsible for building the site and ensuring that the content and layout were properly aligned
-                        and visually consistent. The website was optimized to function seamlessly across both desktop
-                        and mobile views.</p>
-                    <p>HTML, CSS, BootStrap, JavaScript</p>
-                </div>
-            </div>
-            <!-- Project Item 4 -->
-            <div class="project-item">
-                <div>
-                    <div :style="{ backgroundImage: `url(${webScraping})` }"></div>
-                </div>
-                <div>
-                    <p>Web Scraping using Python</p>
-                    <p>Developed a web scraping solution to automatically extract, clean, and organize data from
-                        targeted websites for efficient analysis and reporting.</p>
-                    <p>Python, Google Colab</p>
-                </div>
-            </div>
-            <!-- Project Item 5 -->
-            <div class="project-item">
-                <div>
-                    <div :style="{ backgroundImage: `url(${dataWrangling})` }"></div>
-                </div>
-                <div>
-                    <p>Netflix Data Wrangling</p>
-                    <p>Performed data wrangling on a Netflix dataset to clean, transform, and prepare the data for
-                        exploratory analysis and insights generation.</p>
-                    <p>Python, Kaggle</p>
+                    <p>{{ project.title }}</p>
+                    <p>{{ project.description }}</p>
+                    <p>{{ project.technologies }}</p>
                 </div>
             </div>
         </div>
@@ -165,9 +176,18 @@ main {
         padding: 0 1rem;
         border: none;
         cursor: pointer;
+        transition: all 0.3s ease;
 
         &:hover {
             background-color: rgb(19, 91, 236, 0.4);
+        }
+
+        &.active {
+            background-color: rgb(19, 91, 236);
+        }
+
+        &.active span {
+            color: white;
         }
 
         span {
@@ -178,6 +198,7 @@ main {
 
             color: rgb(19, 91, 236);
             line-height: 1.5;
+            transition: color 0.3s ease;
         }
     }
 }
