@@ -1,3 +1,35 @@
+<script setup>
+import { ref, computed } from "vue";
+
+const form = ref({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+
+const isFormValid = computed(() => {
+  return (
+    form.value.name.trim() !== "" &&
+    form.value.email.trim() !== "" &&
+    form.value.subject.trim() !== "" &&
+    form.value.message.trim() !== ""
+  );
+});
+
+const submitForm = () => {
+  // Handle form submission logic here
+  console.log("Form submitted:", form.value);
+  // Reset form after submission
+  form.value = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+};
+</script>
+
 <template>
   <main>
     <!-- Page Header -->
@@ -14,29 +46,53 @@
       <!-- Contact Form -->
       <div class="contact-form">
         <h2>Send a Direct Message</h2>
-        <form>
+        <form @submit.prevent="submitForm">
           <div>
             <label for="name">
               <p>Name</p>
-              <input id="name" placeholder="Enter your name" />
+              <input
+                id="name"
+                v-model.trim="form.name"
+                placeholder="Enter your name"
+                type="text"
+                maxlength="100"
+                required
+              />
             </label>
-            <label for="name">
+            <label for="email">
               <p>Email</p>
-              <input id="email" placeholder="Enter your email address" />
+              <input
+                id="email"
+                v-model.trim="form.email"
+                placeholder="Enter your email address"
+                type="email"
+                maxlength="120"
+                required
+              />
             </label>
           </div>
           <label for="subject">
             <p>Subject</p>
-            <input id="subject" placeholder="What is this about?" />
+            <input
+              id="subject"
+              v-model.trim="form.subject"
+              placeholder="What is this about?"
+              type="text"
+              maxlength="150"
+              required
+            />
           </label>
           <label for="message">
             <p>Your Message</p>
             <textarea
               id="message"
+              v-model.trim="form.message"
               placeholder="Enter your message here..."
+              maxlength="5000"
+              required
             ></textarea>
           </label>
-          <button type="submit">Send Message</button>
+          <button type="submit" :disabled="!isFormValid">Send Message</button>
         </form>
       </div>
       <!-- Contact Information -->
@@ -224,6 +280,12 @@ button {
 
   &:hover {
     background-color: rgba(59, 130, 246, 0.9); // hover:bg-primary/90
+  }
+
+  &:disabled {
+    background-color: #d1d5db; // bg-gray-300
+    color: #6b7280; // text-gray-500
+    cursor: not-allowed;
   }
 
   @media (min-width: 640px) {
