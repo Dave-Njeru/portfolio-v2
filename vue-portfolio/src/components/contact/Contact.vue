@@ -39,17 +39,17 @@
                 <div class="contact-details">
                     <h3>On Social Media</h3>
                     <div>
-                        <a href="https://www.linkedin.com/in/ndwigadave/"><svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://www.linkedin.com/in/ndwigadave/"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path clip-rule="evenodd"
                                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.388 0-1.601 1.086-1.601 2.206v4.248H8.014V8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.14-.931 2.065-2.065 2.065zm1.336 8.905H4.002V8.59h2.671v7.748zM17.638 2H6.362A4.362 4.362 0 002 6.362v11.276A4.362 4.362 0 006.362 22h11.276A4.362 4.362 0 0022 17.638V6.362A4.362 4.362 0 0017.638 2z"
                                     fill-rule="evenodd"></path>
                             </svg></a>
-                        <a href="https://github.com/Dave-Njeru"> <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://github.com/Dave-Njeru"> <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path clip-rule="evenodd"
                                     d="M12 2C6.477 2 2 6.477 2 12c0 4.286 2.89 7.92 6.837 9.163.498.09.68-.216.68-.48 0-.236-.008-.864-.013-1.695-2.804.604-3.396-1.35-3.396-1.35-.452-1.15-1.104-1.455-1.104-1.455-.903-.618.068-.605.068-.605 1.0.07 1.527 1.025 1.527 1.025.888 1.523 2.327 1.083 2.895.828.09-.643.348-1.083.633-1.33-2.21-.25-4.533-1.102-4.533-4.924 0-1.087.39-1.978 1.028-2.675-.104-.253-.446-1.267.098-2.638 0 0 .837-.268 2.742 1.022A9.63 9.63 0 0112 6.82c.85.004 1.705.114 2.504.336 1.905-1.29 2.74-1.022 2.74-1.022.546 1.37.202 2.385.1 2.638.64.697 1.026 1.588 1.026 2.675 0 3.833-2.327 4.67-4.542 4.914.357.308.678.918.678 1.85 0 1.335-.012 2.415-.012 2.742 0 .267.18.577.688.48A10.007 10.007 0 0022 12c0-5.523-4.477-10-10-10z"
                                     fill-rule="evenodd"></path>
                             </svg></a>
-                        <a href="https://x.com/DaveNdwiga"> <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://x.com/DaveNdwiga"> <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
                                 </path>
