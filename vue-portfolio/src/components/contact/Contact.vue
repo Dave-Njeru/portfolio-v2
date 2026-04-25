@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
 
+const status = ref("");
 const form = ref({
   name: "",
   email: "",
@@ -17,16 +18,34 @@ const isFormValid = computed(() => {
   );
 });
 
-const submitForm = () => {
+const submitForm = async () => {
   // Handle form submission logic here
-  console.log("Form submitted:", form.value);
-  // Reset form after submission
-  form.value = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
+  try {
+    const response = await fetch("https://formspree.io/f/xykloabe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(form.value),
+    });
+
+    if (response.ok) {
+      status.value = "Thanks! Your message has been sent.";
+      // Reset fields
+      form.value = {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      };
+    } else {
+      status.value = "Oops! There was a problem submitting your form.";
+    }
+  } catch (error) {
+    status.value = "An error occurred while sending your message.";
+    console.error("Error submitting form:", error.message);
+  }
 };
 </script>
 
@@ -93,6 +112,16 @@ const submitForm = () => {
             ></textarea>
           </label>
           <button type="submit" :disabled="!isFormValid">Send Message</button>
+          <p
+            v-if="status"
+            :class="{
+              'status-success': status.includes('Thanks'),
+              'status-error': !status.includes('Thanks'),
+            }"
+            class="status-message"
+          >
+            {{ status }}
+          </p>
         </form>
       </div>
       <!-- Contact Information -->
@@ -353,5 +382,27 @@ button {
       }
     }
   }
+}
+
+.status-message {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.status-success {
+  background-color: #ecfdf5; // light green background
+  border: 1px solid #a7f3d0; // green border
+  color: #065f46; // dark green text
+}
+
+.status-error {
+  background-color: #fef2f2; // light red background
+  border: 1px solid #fecaca; // red border
+  color: #7f1d1d; // dark red text
 }
 </style>
