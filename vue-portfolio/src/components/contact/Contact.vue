@@ -49,7 +49,7 @@ const submitForm = () => {
         <form @submit.prevent="submitForm">
           <div>
             <label for="name">
-              <p>Name</p>
+              <p>Name <span>*</span></p>
               <input
                 id="name"
                 v-model.trim="form.name"
@@ -60,7 +60,7 @@ const submitForm = () => {
               />
             </label>
             <label for="email">
-              <p>Email</p>
+              <p>Email <span>*</span></p>
               <input
                 id="email"
                 v-model.trim="form.email"
@@ -72,7 +72,7 @@ const submitForm = () => {
             </label>
           </div>
           <label for="subject">
-            <p>Subject</p>
+            <p>Subject <span>*</span></p>
             <input
               id="subject"
               v-model.trim="form.subject"
@@ -83,7 +83,7 @@ const submitForm = () => {
             />
           </label>
           <label for="message">
-            <p>Your Message</p>
+            <p>Your Message <span>*</span></p>
             <textarea
               id="message"
               v-model.trim="form.message"
@@ -226,6 +226,10 @@ label {
     color: rgb(31, 41, 55);
     line-height: 1.5;
     padding-bottom: 0.5rem;
+
+    span {
+      color: rgb(220, 38, 38);
+    }
   }
 
   input,
