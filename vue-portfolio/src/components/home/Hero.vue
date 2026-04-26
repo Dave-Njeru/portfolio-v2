@@ -18,8 +18,8 @@
         </div>
         <!-- CTA Buttons -->
         <div class="button-group">
-          <button><span>Explore My Projects</span></button>
-          <button><span>Download Resume</span></button>
+          <router-link to="/projects" class="cta-button"><span>Explore My Projects</span></router-link>
+          <router-link to="/resume" class="cta-button"><span>View Resume</span></router-link>
         </div>
       </div>
       <!-- Profile Image -->
@@ -115,7 +115,7 @@ main {
     justify-content: flex-start;
   }
 
-  button {
+  .cta-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,6 +139,7 @@ main {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 
     span {
       overflow: hidden;
