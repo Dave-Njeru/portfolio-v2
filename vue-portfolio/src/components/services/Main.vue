@@ -69,9 +69,7 @@
         </div>
         <!-- CTA Button -->
         <div class="cta-container">
-            <button>
-                <span>Let's Work Together</span>
-            </button>
+            <router-link to="/contact" class="cta-button"><span>Let's Work Together</span></router-link>
         </div>
     </main>
 </template>
@@ -203,7 +201,7 @@ main {
     justify-content: center;
     padding: 3rem 1rem;
 
-    button {
+    .cta-button {
         display: flex;
         align-items: center; // Centers the span text vertically
         justify-content: center; // Centers the span text horizontally
@@ -211,6 +209,7 @@ main {
         max-width: 30rem;
         background-color: rgb(59, 130, 246);
         color: rgb(255, 255, 255);
+        text-decoration: none; // Removes underline from router-link
 
         font: {
             size: 1rem;
