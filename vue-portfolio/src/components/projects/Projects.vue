@@ -117,7 +117,7 @@ const filteredProjects = computed(() => {
           <p>{{ project.description }}</p>
           <p>{{ project.technologies }}</p>
           <div>
-            <a href="#">
+            <a :href="project.link" target="_blank" rel="noopener noreferrer">
               View Project
               <span class="material-symbols-outlined">arrow_forward</span></a
             >
