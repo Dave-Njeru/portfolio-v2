@@ -46,7 +46,7 @@ const projects = ref([
       "Developed a web scraping solution to automatically extract, clean, and organize data from targeted websites for efficient analysis and reporting.",
     technologies: "Python, Google Colab",
     image: webScraping,
-    category: "Data Analysis",
+    category: "Data Science",
     link: "https://github.com/Dave-Njeru/Web-Scraping-with-Python",
   },
   {
@@ -56,7 +56,7 @@ const projects = ref([
       "Performed data wrangling on a Netflix dataset to clean, transform, and prepare the data for exploratory analysis and insights generation.",
     technologies: "Python, Kaggle",
     image: dataWrangling,
-    category: "Data Analysis",
+    category: "Data Science",
     link: "https://github.com/Dave-Njeru/Netflix-Dataset-Data-Wrangling",
   },
 ]);
@@ -95,10 +95,10 @@ const filteredProjects = computed(() => {
         <span>Web Development</span>
       </button>
       <button
-        @click="selectedCategory = 'Data Analysis'"
-        :class="{ active: selectedCategory === 'Data Analysis' }"
+        @click="selectedCategory = 'Data Science'"
+        :class="{ active: selectedCategory === 'Data Science' }"
       >
-        <span>Data Analysis</span>
+        <span>Data Science</span>
       </button>
     </div>
     <!-- ImageGrid -->
