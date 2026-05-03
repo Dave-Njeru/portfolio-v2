@@ -17,6 +17,7 @@ const projects = ref([
     technologies: "JavaScript, PHP, MariaDB, AWS, OpenAI",
     image: healthMgtSystem,
     category: "Web Development",
+    link: "https://drive.google.com/drive/folders/1FCp9zV4VTGE_2Rg6-VfHvyeBfDfn6rcj?usp=sharing",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const projects = ref([
     technologies: "JavaScript, PHP, MariaDB",
     image: wasteMgtSystem,
     category: "Web Development",
+    link: "https://github.com/Dave-Njeru/clients-waste",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const projects = ref([
     technologies: "HTML, CSS, BootStrap, JavaScript",
     image: zeeliu,
     category: "Web Development",
+    link: "https://dave-njeru.github.io/zeeliu/",
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const projects = ref([
     technologies: "Python, Google Colab",
     image: webScraping,
     category: "Data Analysis",
+    link: "https://github.com/Dave-Njeru/Web-Scraping-with-Python",
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ const projects = ref([
     technologies: "Python, Kaggle",
     image: dataWrangling,
     category: "Data Analysis",
+    link: "https://github.com/Dave-Njeru/Netflix-Dataset-Data-Wrangling",
   },
 ]);
 
