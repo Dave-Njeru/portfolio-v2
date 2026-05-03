@@ -61,226 +61,270 @@ const filteredProjects = computed(() => {
     return projects.value;
   }
   return projects.value.filter(
-    (project) => project.category === selectedCategory.value
+    (project) => project.category === selectedCategory.value,
   );
 });
 </script>
 
 <template>
-    <main>
-        <!-- PageHeading -->
-        <div class="page-heading">
-            <div>
-                <p>Projects</p>
-                <p>Below are a few projects I have worked on.</p>
-            </div>
+  <main>
+    <!-- PageHeading -->
+    <div class="page-heading">
+      <div>
+        <p>Projects</p>
+        <p>Below are a few projects I have worked on.</p>
+      </div>
+    </div>
+    <!-- Chips -->
+    <div class="button-group">
+      <button
+        @click="selectedCategory = 'All'"
+        :class="{ active: selectedCategory === 'All' }"
+      >
+        <span>All</span>
+      </button>
+      <button
+        @click="selectedCategory = 'Web Development'"
+        :class="{ active: selectedCategory === 'Web Development' }"
+      >
+        <span>Web Development</span>
+      </button>
+      <button
+        @click="selectedCategory = 'Data Analysis'"
+        :class="{ active: selectedCategory === 'Data Analysis' }"
+      >
+        <span>Data Analysis</span>
+      </button>
+    </div>
+    <!-- ImageGrid -->
+    <div class="image-grid">
+      <!-- Project Item -->
+      <div
+        class="project-item"
+        v-for="project in filteredProjects"
+        :key="project.id"
+      >
+        <div>
+          <div :style="{ backgroundImage: `url(${project.image})` }"></div>
         </div>
-        <!-- Chips -->
-        <div class="button-group">
-            <button 
-                @click="selectedCategory = 'All'"
-                :class="{ active: selectedCategory === 'All' }">
-                <span>All</span>
-            </button>
-            <button 
-                @click="selectedCategory = 'Web Development'"
-                :class="{ active: selectedCategory === 'Web Development' }">
-                <span>Web Development</span>
-            </button>
-            <button 
-                @click="selectedCategory = 'Data Analysis'"
-                :class="{ active: selectedCategory === 'Data Analysis' }">
-                <span>Data Analysis</span>
-            </button>
+        <div>
+          <p>{{ project.title }}</p>
+          <p>{{ project.description }}</p>
+          <p>{{ project.technologies }}</p>
+          <div>
+            <a href="#">
+              View Project
+              <span class="material-symbols-outlined">arrow_forward</span></a
+            >
+          </div>
         </div>
-        <!-- ImageGrid -->
-        <div class="image-grid">
-            <!-- Project Item -->
-            <div class="project-item" v-for="project in filteredProjects" :key="project.id">
-                <div>
-                    <div :style="{ backgroundImage: `url(${project.image})` }"></div>
-                </div>
-                <div>
-                    <p>{{ project.title }}</p>
-                    <p>{{ project.description }}</p>
-                    <p>{{ project.technologies }}</p>
-                </div>
-            </div>
-        </div>
-    </main>
+      </div>
+    </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
 main {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 2rem;
 
-    @media (min-width: 640px) {
-        padding: 1.5rem 0;
-    }
+  @media (min-width: 640px) {
+    padding: 1.5rem 0;
+  }
 
-    @media (min-width: 768px) {
-        padding: 2.5rem 0;
-    }
+  @media (min-width: 768px) {
+    padding: 2.5rem 0;
+  }
 }
 
 .page-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  div {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.75rem;
+    min-width: 18rem;
+    flex-direction: column;
+    gap: 0.5rem;
 
-    div {
-        display: flex;
-        min-width: 18rem;
-        flex-direction: column;
-        gap: 0.5rem;
+    p:first-child {
+      font: {
+        size: 2.25rem;
+        weight: 900;
+      }
 
-        p:first-child {
-            font: {
-                size: 2.25rem;
-                weight: 900;
-            }
-
-            color: rgb(17, 24, 39);
-        }
-
-        p:last-child {
-            font: {
-                size: 1rem;
-                weight: 400;
-            }
-
-            color: rgb(107, 114, 128);
-        }
+      color: rgb(17, 24, 39);
     }
+
+    p:last-child {
+      font: {
+        size: 1rem;
+        weight: 400;
+      }
+
+      color: rgb(107, 114, 128);
+    }
+  }
 }
 
 .button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.25rem;
+
+  button {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 0.25rem;
-
-    button {
-        display: flex;
-        flex-shrink: 0;
-        height: 2rem;
-        align-items: center;
-        justify-content: center;
-        column-gap: 0.5rem;
-        border-radius: 9999px;
-        background-color: rgb(19, 91, 236, 0.2);
-        padding: 0 1rem;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &:hover {
-            background-color: rgb(19, 91, 236, 0.4);
-        }
-
-        &.active {
-            background-color: rgb(19, 91, 236);
-        }
-
-        &.active span {
-            color: white;
-        }
-
-        span {
-            font: {
-                size: 0.875rem;
-                weight: 500;
-            }
-
-            color: rgb(19, 91, 236);
-            line-height: 1.5;
-            transition: color 0.3s ease;
-        }
-    }
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1.5rem;
-
-    @media (min-width: 640px) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @media (min-width: 768px) {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-.project-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    border-radius: 0.5rem;
-    background-color: rgb(255, 255, 255);
-    padding: 1rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+    border-radius: 9999px;
+    background-color: rgb(19, 91, 236, 0.2);
+    padding: 0 1rem;
+    border: none;
+    cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover {
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        transform: translateY(-4px);
+      background-color: rgb(19, 91, 236, 0.4);
     }
 
-    div:first-child {
-        width: 100%;
-        overflow: hidden;
-        border-radius: 0.375rem;
-
-        div {
-            width: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            aspect-ratio: 16 / 9;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
+    &.active {
+      background-color: rgb(19, 91, 236);
     }
 
-    div:last-child {
-        p:first-child {
-            font: {
-                size: 1rem;
-                weight: 500;
-            }
-
-            color: rgb(17, 24, 39);
-        }
-
-        p:nth-child(2) {
-            font: {
-                size: 0.875rem;
-                weight: 400;
-            }
-
-            color: rgb(107, 114, 128);
-            line-height: 1.5;
-            margin-top: 0.25rem;
-        }
-
-        p:last-child {
-            font: {
-                size: 0.75rem;
-                weight: 400;
-            }
-
-            margin-top: 0.5rem;
-            color: rgb(96, 165, 250);
-        }
+    &.active span {
+      color: white;
     }
+
+    span {
+      font: {
+        size: 0.875rem;
+        weight: 500;
+      }
+
+      color: rgb(19, 91, 236);
+      line-height: 1.5;
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-4px);
+  }
+
+  div:first-child {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.375rem;
+
+    div {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 16 / 9;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  div:last-child {
+    p:first-child {
+      font: {
+        size: 1rem;
+        weight: 500;
+      }
+
+      color: rgb(17, 24, 39);
+    }
+
+    p:nth-child(2) {
+      font: {
+        size: 0.875rem;
+        weight: 400;
+      }
+
+      color: rgb(107, 114, 128);
+      line-height: 1.5;
+      margin-top: 0.25rem;
+    }
+
+    p:nth-child(3) {
+      font: {
+        size: 0.75rem;
+        weight: 400;
+      }
+
+      margin-top: 0.5rem;
+      color: rgb(96, 165, 250);
+    }
+
+    div {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      display: flex;
+      justify-content: flex-end;
+      border-top: 1px solid rgb(243, 244, 246);
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        transition: all 0.15s ease;
+        color: #135bec;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration-line: underline;
+        }
+
+        span {
+          font-size: 0.875rem;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 </style>
