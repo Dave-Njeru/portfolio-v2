@@ -41,7 +41,7 @@ const projects = ref([
   },
   {
     id: 4,
-    title: "Web Scraping using Python",
+    title: "Web Scraping with Python",
     description:
       "Developed a web scraping solution to automatically extract, clean, and organize data from targeted websites for efficient analysis and reporting.",
     technologies: "Python, Google Colab",
@@ -51,7 +51,7 @@ const projects = ref([
   },
   {
     id: 5,
-    title: "Netflix Data Wrangling",
+    title: "Netflix Dataset Data Wrangling",
     description:
       "Performed data wrangling on a Netflix dataset to clean, transform, and prepare the data for exploratory analysis and insights generation.",
     technologies: "Python, Kaggle",
