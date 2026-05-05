@@ -5,6 +5,8 @@ import wasteMgtSystem from "@/assets/images/waste-mgt-system.jpg";
 import zeeliu from "@/assets/images/zeeliu.png";
 import webScraping from "@/assets/images/web-scraping.jpg";
 import dataWrangling from "@/assets/images/data-wrangling.jpg";
+import eda from "@/assets/images/eda.jpg";
+import powerBI from "@/assets/images/power-bi.png";
 
 const selectedCategory = ref("All");
 
@@ -58,6 +60,26 @@ const projects = ref([
     image: dataWrangling,
     category: "Data Science",
     link: "https://github.com/Dave-Njeru/Netflix-Dataset-Data-Wrangling",
+  },
+  {
+    id: 6,
+    title: "Titanic Exploratory Data Analysis",
+    description:
+      "Conducted exploratory data analysis on the Titanic dataset to uncover patterns, trends, and insights related to passenger survival rates and other key factors.",
+    technologies: "Python, Kaggle",
+    image: eda,
+    category: "Data Science",
+    link: "https://github.com/Dave-Njeru/Titanic-Exploratory-Data-Analysis",
+  },
+  {
+    id: 7,
+    title: "Business Intelligence on Power BI",
+    description:
+      "Utilized Power BI to create interactive dashboards and reports that provide actionable insights for business decision-making, leveraging data visualization techniques to enhance data interpretation.",
+    technologies: "Python, Kaggle",
+    image: powerBI,
+    category: "Data Science",
+    link: "https://github.com/Dave-Njeru/Business-Intelligence-on-Power-BI",
   },
 ]);
 
