@@ -51,11 +51,21 @@ onUnmounted(() => {
       </div>
       <!-- Navigation Links -->
       <nav :class="{ open: menuOpen }" class="navigation">
-        <RouterLink to="/" class="link" @click="menuOpen = false">Home</RouterLink>
-        <RouterLink to="/services" class="link" @click="menuOpen = false">Services</RouterLink>
-        <RouterLink to="/resume" class="link" @click="menuOpen = false">Resume</RouterLink>
-        <RouterLink to="/projects" class="link" @click="menuOpen = false">Projects</RouterLink>
-        <RouterLink to="/contact" class="link" @click="menuOpen = false">Contact</RouterLink>
+        <RouterLink to="/" class="link" @click="menuOpen = false"
+          >Home</RouterLink
+        >
+        <RouterLink to="/services" class="link" @click="menuOpen = false"
+          >Services</RouterLink
+        >
+        <RouterLink to="/resume" class="link" @click="menuOpen = false"
+          >Resume</RouterLink
+        >
+        <RouterLink to="/projects" class="link" @click="menuOpen = false"
+          >Projects</RouterLink
+        >
+        <RouterLink to="/contact" class="link" @click="menuOpen = false"
+          >Contact</RouterLink
+        >
       </nav>
       <!-- Hamburger Menu Button -->
       <button @click="toggleMenu" class="menu-button">
@@ -107,7 +117,8 @@ header {
     padding: 1rem 2rem;
     border: 1px solid rgb(229, 231, 235);
     border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05); // shadow-lg equivalent
     z-index: 10; // Ensure it appears above other content
   }

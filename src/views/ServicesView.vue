@@ -1,15 +1,15 @@
 <script setup>
-import Navbar from "@/components/shared/Navbar.vue"
-import Footer from "@/components/shared/Footer.vue"
-import Main from "@/components/services/Main.vue"
+import AppNavbar from "@/components/shared/AppNavbar.vue";
+import AppFooter from "@/components/shared/AppFooter.vue";
+import ServicesDisplay from "@/components/services/ServicesDisplay.vue";
 </script>
 
 <template>
-    <div>
-        <Navbar />
-        <Main />
-        <Footer />
-    </div>
+  <div>
+    <AppNavbar />
+    <ServicesDisplay />
+    <AppFooter />
+  </div>
 </template>
 
 <style scoped lang="scss">

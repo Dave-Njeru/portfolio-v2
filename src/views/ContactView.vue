@@ -1,14 +1,14 @@
 <script setup>
-import Navbar from "@/components/shared/Navbar.vue";
-import Footer from "@/components/shared/Footer.vue";
-import Contact from "@/components/contact/Contact.vue";
+import AppNavbar from "@/components/shared/AppNavbar.vue";
+import AppFooter from "@/components/shared/AppFooter.vue";
+import ContactForm from "@/components/contact/ContactForm.vue";
 </script>
 
 <template>
   <div>
-    <Navbar />
-    <Contact />
-    <Footer />
+    <AppNavbar />
+    <ContactForm />
+    <AppFooter />
   </div>
 </template>
 

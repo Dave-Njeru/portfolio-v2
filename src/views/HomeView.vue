@@ -1,14 +1,14 @@
 <script setup>
-import Navbar from "@/components/shared/Navbar.vue";
-import Hero from "@/components/home/Hero.vue";
-import Footer from "@/components/shared/Footer.vue";
+import AppNavbar from "@/components/shared/AppNavbar.vue";
+import HomeProfile from "@/components/home/HomeProfile.vue";
+import AppFooter from "@/components/shared/AppFooter.vue";
 </script>
 
 <template>
   <div>
-    <Navbar />
-    <Hero />
-    <Footer />
+    <AppNavbar />
+    <HomeProfile />
+    <AppFooter />
   </div>
 </template>
 
