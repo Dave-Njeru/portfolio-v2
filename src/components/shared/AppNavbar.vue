@@ -46,9 +46,9 @@ onUnmounted(() => {
     <!-- Navbar Component -->
     <header ref="headerRef">
       <!-- Logo / Initials -->
-      <div class="logo">
+      <RouterLink to="/" class="logo" @click="menuOpen = false">
         <span>DN</span>
-      </div>
+      </RouterLink>
       <!-- Navigation Links -->
       <nav :class="{ open: menuOpen }" class="navigation">
         <RouterLink to="/" class="link" @click="menuOpen = false"
@@ -93,6 +93,7 @@ header {
   border-radius: 50%;
   color: white;
   background-color: rgb(112, 8, 231); // bg-purple-700 equivalent
+  text-decoration: none;
 
   span {
     font: {
