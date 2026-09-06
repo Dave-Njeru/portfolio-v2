@@ -1,5 +1,9 @@
 <script setup>
 defineProps({
+  icon: {
+    type: String,
+    required: true,
+  },
   heading: {
     type: String,
     required: true,
@@ -17,7 +21,7 @@ defineProps({
 
 <template>
   <div class="service-card">
-    <span class="material-symbols-outlined service-icon">code</span>
+    <span class="material-symbols-outlined service-icon">{{ icon }}</span>
     <div class="card-content">
       <h2>{{ heading }}</h2>
       <p>

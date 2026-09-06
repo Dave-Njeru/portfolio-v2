@@ -3,18 +3,21 @@ import ServiceCard from "./ServiceCard.vue";
 
 const services = [
   {
+    icon: "code",
     heading: "Web Development",
     description:
       "Building responsive and dynamic websites using the latest technologies like Vue.js and Django.",
     skills: ["HTML", "CSS", "JavaScript", "Vue.js", "Django", "SQL"],
   },
   {
+    icon: "support_agent",
     heading: "IT Support",
     description:
       "Offering reliable IT support services including troubleshooting, maintenance, and network management.",
     skills: ["Network Setup", "Troubleshooting", "Maintenance", "Security"],
   },
   {
+    icon: "storage",
     heading: "Database Management",
     description:
       "Designing and maintaining efficient database systems to ensure data integrity and performance.",
